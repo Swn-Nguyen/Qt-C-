@@ -1,0 +1,115 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d2390377f7eb9120f921.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "timerExample",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "release_translations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-release_translations-Debug-48f56abce66c09b0fc77.json",
+					"name" : "release_translations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "timerExample::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-timerExample-Debug-e66a26e4b19535745b9c.json",
+					"name" : "timerExample",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "timerExample_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-timerExample_autogen-Debug-2b5885ce84733fd24b2b.json",
+					"name" : "timerExample_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "timerExample_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-timerExample_autogen_timestamp_deps-Debug-4f2e030a73deed21472d.json",
+					"name" : "timerExample_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "timerExample_lrelease::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-timerExample_lrelease-Debug-b4f335255ff8a8062eea.json",
+					"name" : "timerExample_lrelease",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "timerExample_lupdate::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-timerExample_lupdate-Debug-907002b8f5017f59f076.json",
+					"name" : "timerExample_lupdate",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "update_translations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-update_translations-Debug-dbeda467cdb0a219de11.json",
+					"name" : "update_translations",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/ng.thanhson/Project/QT/timerExample/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug",
+		"source" : "D:/ng.thanhson/Project/QT/timerExample"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

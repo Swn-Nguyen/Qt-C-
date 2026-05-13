@@ -1,0 +1,3 @@
+set(__QT_DEPLOY_TARGET_QT_FirstApplication_FILE D:/ng.thanhson/Project/QT/QT_FirstApplication/build/Desktop_Qt_6_11_0_MinGW_64_bit-Release/QT_FirstApplication.exe)
+set(__QT_DEPLOY_TARGET_QT_FirstApplication_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_QT_FirstApplication_RUNTIME_DLLS C:/Qt/6.11.0/mingw_64/bin/Qt6Core.dll)
