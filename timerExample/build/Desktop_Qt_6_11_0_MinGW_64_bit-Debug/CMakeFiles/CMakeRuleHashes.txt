@@ -1,7 +1,0 @@
-# Hashes of file build rules.
-ec54199beefa23f212e48c4974f0c023 .qt/rcc/qrc_timerExample_translations.cpp
-fdbc8b4285a2c2aca7f30b655cfa5a84 CMakeFiles/timerExample_autogen
-fdbc8b4285a2c2aca7f30b655cfa5a84 CMakeFiles/timerExample_lrelease
-6b096bd1c8c26ae419dc8ebdf4c9b3cf CMakeFiles/timerExample_lupdate
-c8c182ffa191b36e470a15d3fda80d03 timerExample_autogen/timestamp
-ed4566567c739a161547a11d4fe0a171 timerExample_vi_VN.qm

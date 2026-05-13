@@ -1,9 +1,0 @@
-D:/ng.thanhson/Project/QT/QT_FirstApplication/build/Desktop_Qt_6_11_0_MinGW_64_bit-Release/CMakeFiles/QT_FirstApplication.dir
-D:/ng.thanhson/Project/QT/QT_FirstApplication/build/Desktop_Qt_6_11_0_MinGW_64_bit-Release/CMakeFiles/edit_cache.dir
-D:/ng.thanhson/Project/QT/QT_FirstApplication/build/Desktop_Qt_6_11_0_MinGW_64_bit-Release/CMakeFiles/rebuild_cache.dir
-D:/ng.thanhson/Project/QT/QT_FirstApplication/build/Desktop_Qt_6_11_0_MinGW_64_bit-Release/CMakeFiles/list_install_components.dir
-D:/ng.thanhson/Project/QT/QT_FirstApplication/build/Desktop_Qt_6_11_0_MinGW_64_bit-Release/CMakeFiles/install.dir
-D:/ng.thanhson/Project/QT/QT_FirstApplication/build/Desktop_Qt_6_11_0_MinGW_64_bit-Release/CMakeFiles/install/local.dir
-D:/ng.thanhson/Project/QT/QT_FirstApplication/build/Desktop_Qt_6_11_0_MinGW_64_bit-Release/CMakeFiles/install/strip.dir
-D:/ng.thanhson/Project/QT/QT_FirstApplication/build/Desktop_Qt_6_11_0_MinGW_64_bit-Release/CMakeFiles/QT_FirstApplication_autogen_timestamp_deps.dir
-D:/ng.thanhson/Project/QT/QT_FirstApplication/build/Desktop_Qt_6_11_0_MinGW_64_bit-Release/CMakeFiles/QT_FirstApplication_autogen.dir
