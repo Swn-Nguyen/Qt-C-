@@ -49,5 +49,9 @@ int main(int argc, char *argv[])
     qInfo() << proWatch;
     if(proWatch)
         watchPro(proWatch, true);
+    QString Str;
+    Str = "Hel.lo.";
+    Str += "Worl.d";
+    qInfo() << Str.split('.');
     return QCoreApplication::exec();
 }
