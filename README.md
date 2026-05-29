@@ -4,6 +4,23 @@ Basic Qt classes
     - Base class for everything Qt (non-template)
     - Connect between signal and slot
     - Sender return the pointer that point to the one call slots
+    - To declare a class as a QObject, it must:
+        + Inherit from QObject
+        + Include the Q_OBJECT macro
+        + Have constructor with "QObject *parent = nullptr" 
+    -  The MEMBER Method:
+        + Q_PROPERTY(DataType, MEMBER, NOTIFY): link a property directly to a member variable of a class. 
+        + setProperty: set the value of object's name property to value
+        + property: return the value of the object's name property
+    - The READ/WRITE Method:
+        + Q_PROPERTY(DataType, READ, WRITE, NOTIFY): use getter, setter function to read from and write to a member variable
+        + Same like MEMBER Method but can using getter and setter function same property and setProperty
+    - Memory managerment:
+        + When Object created with a parent, if the parent is deleted, all its childrend are deleted as well
+        + Qobject can be created with a parent, by passing a parent object its constructor or using setParent()
+        + The list of child objects display by children() function
+    - Meta Object Compiler:
+        + Scans the files for the Q_OBJECT macro and generates C++ files containing meta object code
 
 *QDate, QTime, QDateTime
     1. ISODate (standard ISO 8601)
@@ -41,4 +58,6 @@ Basic Qt classes
     5. Check status
         - length()/size()
         - isEmpty()/isNull()
+
+*QByteArray, QVariant, QStringList
     

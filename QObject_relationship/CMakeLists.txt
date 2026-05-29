@@ -10,6 +10,7 @@ qt_add_executable(QObject_relationship
 
     server.h server.cpp
     client.h client.cpp
+    myobject.h myobject.cpp
 )
 
 target_link_libraries(QObject_relationship

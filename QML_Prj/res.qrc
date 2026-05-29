@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>daima-db.gif</file>
+    </qresource>
+</RCC>
