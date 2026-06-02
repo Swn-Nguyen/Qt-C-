@@ -6,7 +6,7 @@ Window {
     height: 250
     visible: true
     title: qsTr("Business Card")
-    color: "white"
+    color: themeID.primaryText
 
     minimumHeight: height
     maximumHeight: height
@@ -27,6 +27,10 @@ Window {
         property url website
     }
 
+    Theme{
+        id: themeID
+    }
+
     ContactInfo{
         id: myContactInfo
         name: "Ng.ThanhSon"
@@ -41,8 +45,8 @@ Window {
     }
 
     Rectangle{
-        id: cardBackground
-        color: "transparent"
+        id: cardID
+        color: themeID.cardBackground
 
         anchors{
             fill: parent
@@ -88,67 +92,32 @@ Window {
                 }
             }
 
-            Text{
+            ContentText.TitleText{
                 id: nameID
                 text: myContactInfo.name
-                font{
-                    bold: true
-                    capitalization: Font.AllUppercase
-                    pixelSize: 26
-                }
-                anchors{
-                    top: parent.top
-                    left: parent.left
-                    //leftMargin: 5
-                }
             }
 
-            Rectangle{
+
+
+
+            // Text{
+            //     id: nameID
+            //     text: myContactInfo.name
+            //     font{
+            //         bold: true
+            //         capitalization: Font.AllUppercase
+            //         pixelSize: 26
+            //     }
+            //     anchors{
+            //         top: parent.top
+            //         left: parent.left
+            //         //leftMargin: 5
+            //     }
+            // }
+
+            ContentText.Btn{
                 id: btnDetailsID
-                height: 30
-                width: 100
-                radius: height/2
-                signal clicked
-                property bool checked: false
-                property bool checkable: true
-                color: btnDetailsID.checked || TapHandler.pressed? "white" : "black"
-
-                anchors{
-                    bottom: parent.bottom
-                    left: parent.left
-                    margins: 5
-                }
-
-
-
-                border{
-                    color: btnDetailsID.checked || TapHandler.pressed? "black" : "white"
-                    //width: 2
-                }
-
-                Text {
-                    id: detailsName
-                    text: qsTr("Details")
-                    color: btnDetailsID.checked || TapHandler.pressed? "black" : "white"
-                    font{
-                        bold: true
-                        pixelSize: 15
-                    }
-
-                    anchors{
-                        centerIn: btnDetailsID
-                    }
-                }
-
-                TapHandler{
-
-                    onTapped: {
-                        if(btnDetailsID.checkable){
-                            btnDetailsID.checked = !btnDetailsID.checked
-                        }
-                        btnDetailsID.clicked()
-                    }
-                }
+                btnText: "Details"
             }
 
             Item {
@@ -161,24 +130,40 @@ Window {
                     right: parent.right
                     bottom: parent.bottom
                 }
-                Text {
+                // Text {
+                //     id: addressID
+                //     text: myContactInfo.address
+                //     font.bold: true
+                //     font.pointSize: 11
+                // }
+
+                ContentText.HeadingText{
                     id: addressID
                     text: myContactInfo.address
-                    font.bold: true
-                    font.pointSize: 10
                 }
-                Text {
+
+                ContentText.HeadingText{
                     id: countryID
                     text: myContactInfo.country
-                    font.bold: true
-                    font.pointSize: 12
                     anchors{
                         top: addressID.bottom
-                        //topMargin: 5
+                        topMargin: 5
                     }
                 }
+                // Text {
+                //     id: countryID
+                //     text: myContactInfo.country
+                //     font.bold: true
+                //     font.pointSize: 12
+                //     anchors{
+                //         top: addressID.bottom
+                //         //topMargin: 5
+                //     }
+                // }
                 Text {
                     id: phoneID
+                    color: themeID.primaryText
+
                     text: myContactInfo.phone
                     anchors{
                         top: countryID.bottom
@@ -188,6 +173,8 @@ Window {
 
                 Text {
                     id: emailID
+                    color: themeID.primaryText
+
                     text: myContactInfo.email
                     anchors{
                         top: phoneID.bottom
@@ -197,6 +184,8 @@ Window {
 
                 Text {
                     id: webID
+                    color: themeID.primaryText
+
                     text: myContactInfo.website
                     anchors{
                         top: emailID.bottom
@@ -216,26 +205,41 @@ Window {
                     bottom: parent.bottom
                 }
 
-                Text {
+                // Text {
+                //     id: companyID
+                //     text: myContactInfo.company
+                //     font.bold: true
+                //     font.pointSize: 10
+                //     //font.capitalization: Font.AllUppercase
+                // }
+                ContentText.HeadingText{
                     id: companyID
                     text: myContactInfo.company
-                    font.bold: true
-                    font.pointSize: 15
-                    //font.capitalization: Font.AllUppercase
                 }
-                Text {
+
+                ContentText.HeadingText{
                     id: jobID
                     text: myContactInfo.job
-                    font.bold: true
-                    font.pointSize: 12
                     anchors{
                         top: companyID.bottom
                         topMargin: 5
                     }
                 }
+                // Text {
+                //     id: jobID
+                //     text: myContactInfo.job
+                //     font.bold: true
+                //     font.pointSize: 10
+                //     anchors{
+                //         top: companyID.bottom
+                //         topMargin: 5
+                //     }
+                // }
             }
 
         }
 
     }
+
+
 }
