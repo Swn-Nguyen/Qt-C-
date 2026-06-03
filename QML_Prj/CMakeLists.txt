@@ -19,6 +19,7 @@ qt_add_qml_module(appQML_Prj
     RESOURCES
         daima-db.gif
         RESOURCES
+        QML_FILES Rect.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
