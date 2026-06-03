@@ -67,7 +67,7 @@ Window {
                 margins: 5
             }
 
-            Rectangle{
+            Rectangle {
                 id: photoFrame
                 property int side: 2*root.height/5
                 width: side; height: side

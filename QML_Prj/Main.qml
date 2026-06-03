@@ -4,45 +4,122 @@ import QtQuick.Window
 Window {
     id: root
     width: 200
-    height: 100
+    height: Screen.height - availableHeight + line
+
     visible: true
     title: qsTr("Hello World")
-    color: "#1e1e1e"
+    color: "transparent"
+    property url imgSource: "daima-db.gif"
+    property int taskbar: Screen.height - availableHeight
+    property int line: 20
+    flags: Qt.FramelessWindowHint |Qt.Tool | Qt.WindowStaysOnTopHint
 
-    // Ảnh nền (GIF)
-    AnimatedImage {
-        id: kamehameha
-        source: "daima-db.gif"
+    DragHandler{
+        onActiveChanged: {
+            if(active)
+                root.startSystemMove()
+        }
+    }
+
+    Component.onCompleted: {
+        x = screen.width - width
+        y = availableHeight - height
+    }
+
+    MouseArea{
         anchors.fill: parent
-        fillMode: Image.PreserveAspectFit
+        // property point pos
+        // onPressed: function(mouse){
+        //     pos = Qt.point(mouse.x, mouse.y)
+        // }
+        // onPositionChanged: function(mouse){
+        //     if(pressed){
+        //         root.x += mouse.x - pos.x
+        //         root.y += mouse.y - pos.y
+        //     }
+        // }
     }
 
-    // Đồng hồ
-    Text {
-        id: timeText
-        text: Qt.formatTime(new Date(), "hh:mm:ss")
-        color: "#00ff00"
-        font.pixelSize: 10
-        font.bold: true
-        style: Text.Outline
-        styleColor: "black"
+    Rectangle{
+        id: rectID
+        color: "transparent"
+        anchors.fill: parent
+        AnimatedImage {
+            id: gifID
+            source: imgSource
+            width: parent.width - 80
+            height: parent.height - line
 
-        // --- BỘ MỎ NEO GÓC PHẢI DƯỚI ---
-        anchors.bottom: parent.bottom // Móc đáy chữ vào đáy cửa sổ
-        anchors.right: parent.right   // Móc cạnh phải chữ vào cạnh phải cửa sổ
+            anchors.right: parent.right
+            anchors.bottom:  parent.bottom
+        }
 
-        // Thêm khoảng lề (margin) để chữ không bị sát rạt vào viền mép cửa sổ
-        anchors.bottomMargin: 15
-        anchors.rightMargin: 15
+        Item {
+            id: itemID
+            anchors {
+                bottom: parent.bottom
+                left: parent.left
+            }
+            height: parent.height - line
+            width: 80
+            Rectangle {
+                id: rectBtnID
+                color: "transparent"
+                height: parent.height
+                width: 20
+                Text{
+                    text: "▲"
+                    font.pixelSize: 10
+                    color: tapHandle.pressed ? "black": "white"
+                    anchors.centerIn: rectBtnID
+                }
+
+                TapHandler {
+                    id: tapHandle
+                }
+            }
+
+            Rectangle{
+                id: recTimeID
+
+                anchors{
+                    top: parent.top
+                    left: rectBtnID.right
+                }
+
+                height: parent.height
+                width: 60
+
+                Text {
+                    id: textTimeID
+                    text: Qt.formatTime(new Date(), "hh:mm:ss")
+                    color: "black"
+                    font.pointSize: 10
+                    anchors.top: parent.top
+                }
+                Text {
+                    id: toTimeID
+                    text: "👨‍💻→🚙🛣️"
+                    horizontalAlignment: Text.AlignHCenter
+                    anchors.top: textTimeID.bottom
+                }
+                Text {
+                    id: endTimeID
+                    text: Qt.formatTime(new Date(), "hh:mm:ss")
+                    color: "pink"
+                    font.pointSize: 10
+                    anchors.top: toTimeID.bottom
+                }
+            }
+        }
     }
 
-    // Timer (Để bên ngoài, không cần bọc trong UI Element nào vì nó là Logic ngầm)
     Timer {
         interval: 1000
         running: true
         repeat: true
         onTriggered: {
-            timeText.text = Qt.formatTime(new Date(), "hh:mm:ss")
+            textTimeID.text = Qt.formatTime(new Date(), "hh:mm:ss")
         }
     }
 }
