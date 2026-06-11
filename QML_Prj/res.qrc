@@ -1,5 +1,10 @@
 <RCC>
     <qresource prefix="/">
         <file>daima-db.gif</file>
+        <file>bubu-dudu-sseeyall.gif</file>
+        <file>cat-driving-serious.gif</file>
+        <file>commingHome_1.gif</file>
+        <file>vegeta-in-the-rain-vegeta.gif</file>
+        <file>sparkles-fireworks.gif</file>
     </qresource>
 </RCC>
