@@ -20,6 +20,8 @@ qt_add_qml_module(appGuitarPedal
         RESOURCES
         RESOURCES resources.qrc
         RESOURCES 00-Assets/assets/Button-Pedal-Checked.png 00-Assets/assets/Button-Pedal-Checked@2x.png 00-Assets/assets/Button-Pedal.png 00-Assets/assets/Button-Pedal@2x.png 00-Assets/assets/Guitar-Pedal-Background.png 00-Assets/assets/Guitar-Pedal-Background@2x.png 00-Assets/assets/Knob-Dial.png 00-Assets/assets/Knob-Dial@2x.png 00-Assets/assets/Knob-Markings.png 00-Assets/assets/Knob-Markings@2x.png 00-Assets/assets/LED-Checked.png 00-Assets/assets/LED-Checked@2x.png 00-Assets/assets/LED.png 00-Assets/assets/LED@2x.png 00-Assets/assets/Screw.png 00-Assets/assets/Screw@2x.png 00-Assets/assets/Switch-Checked.png 00-Assets/assets/Switch-Checked@2x.png 00-Assets/assets/Switch.png 00-Assets/assets/Switch@2x.png
+        QML_FILES LabeledImage.qml
+        RESOURCES 00-Assets/fonts/Prisma.ttf 00-Assets/fonts/RussoOne-Regular.ttf
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
