@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     app.setOrganizationDomain("qml-prj.local");
 
 #ifdef Q_OS_WIN
-    SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED);
+    SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED | ES_DISPLAY_REQUIRED);
 #endif
 
     QScreen *screen = QGuiApplication::primaryScreen();

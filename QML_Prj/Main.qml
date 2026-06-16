@@ -267,7 +267,7 @@ Window {
                     id: txtHourBg
                     width: 28
                     height: 16
-                    color: "white"
+                    color: "#555555"
                     border.color: "#00BCD4"
                     border.width: 1
                     radius: 2
@@ -278,6 +278,7 @@ Window {
                         anchors.fill: parent
                         maximumLength: 2
                         placeholderText: "HH"
+                        placeholderTextColor: "#CCCCCC"
                         selectByMouse: true
                         color: "white"
                         font.pixelSize: 11
@@ -301,7 +302,7 @@ Window {
                     id: txtMinuteBg
                     width: 28
                     height: 16
-                    color: "white"
+                    color: "#555555"
                     border.color: "#00BCD4"
                     border.width: 1
                     radius: 2
@@ -314,6 +315,7 @@ Window {
                         anchors.fill: parent
                         maximumLength: 2
                         placeholderText: "MM"
+                        placeholderTextColor: "#CCCCCC"
                         selectByMouse: true
                         color: "white"
                         font.pixelSize: 11
