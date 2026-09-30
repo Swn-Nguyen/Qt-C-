@@ -1,9 +1,10 @@
 #include "myobject.h"
 
-MyObject::MyObject(QObject *parent)
+MyObject::MyObject(QObject *parent, QString nameObject)
     : QObject{parent}
 {
-    QObject::connect(this, &MyObject::informationChanged, this, &MyObject::on_informationChanged);
+    setObjectName(nameObject);
+    qInfo() << "Constructed" << this;
 }
 
 void MyObject::on_informationChanged()
@@ -22,6 +23,11 @@ void MyObject::setValue(int newValue)
         return;
     m_value = newValue;
     emit valueChanged();
+}
+
+MyObject::~MyObject()
+{
+    qInfo() << "Deconstructed" << this;
 }
 
 void MyObject::on_valueChanged()

@@ -7,8 +7,9 @@ qt_standard_project_setup()
 
 qt_add_executable(Pointer_memory_managerment
     main.cpp
-    test.h
-    test.cpp
+    toy.h
+    toy.cpp
+    cat.h cat.cpp
 )
 
 target_link_libraries(Pointer_memory_managerment

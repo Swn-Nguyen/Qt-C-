@@ -11,9 +11,10 @@ class MyObject : public QObject
     Q_PROPERTY(int value READ value WRITE setValue NOTIFY valueChanged FINAL)
 
 public:
-    explicit MyObject(QObject *parent = nullptr);
+    explicit MyObject(QObject *parent = nullptr, QString nameObject = "");
     int value() const;
     void setValue(int newValue);
+    ~MyObject();
 
 signals:
     void informationChanged();

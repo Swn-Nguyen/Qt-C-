@@ -7,79 +7,46 @@
 // #include "server.h"
 // #include "client.h"
 
+MyObject* makeObject()
+{
+    MyObject *root = new MyObject(nullptr, "root");
+
+    for(int P= 0; P< 5; P++)
+    {
+        MyObject *pObj = new MyObject(root, "Parent-" + QString::number(P));
+        for(int C= 0; C< 3; C++)
+        {
+            MyObject *cObj = new MyObject(pObj, "Parent-" + QString::number(P) + " Child-" + QString::number(C));
+            for(int S= 0; S< 3; S++)
+            {
+                MyObject *sObj = new MyObject(cObj, "Parent-" + QString::number(P) + " Child-" + QString::number(C) + " Sub-" + QString::number(S));
+                Q_UNUSED(sObj);
+            }
+        }
+    }
+
+    return root;
+}
+
+void printTree(MyObject* root, int level = 0)
+{
+    if(root->children().length()== 0) return;
+    QString lead = "-";
+    lead.fill('-', level* 5);
+
+    foreach (QObject* obj, root->children()) {
+        MyObject* child= qobject_cast<MyObject*>(obj);
+        if(!child) return;
+        qInfo() << lead << child;
+        printTree(child, level+ 1);
+    }
+}
+
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-
-    MyObject *object = new MyObject(&a);
-    QObject::connect(object, &MyObject::valueChanged, object, &MyObject::on_valueChanged);
-    object->setProperty("information", "Hello world");
-    qInfo() << "Information property: " <<object->property("information");
-    object->setProperty("value", 50);
-    //object->setValue(50);
-    qInfo() << "Value property: " << object->property("value");
-
-    qInfo() << object -> metaObject()-> className();
-    qInfo() << object -> metaObject()-> superClass()-> className();
-    qInfo() << object -> metaObject()-> propertyCount();
-    qInfo() << object -> metaObject()-> methodCount();
-    qInfo() << object -> metaObject()-> enumeratorCount();
-    qInfo() << object -> metaObject();
-
-    // Client Son12;
-    // Server* Servers[3];
-    // Servers[0] = new Server(&Son12, "FPT", 0);
-    // Servers[1] = new Server(&Son12, "VNPT", 1);
-    // Servers[2] = new Server(&Son12, "Viettel", 2);
-
-    // Client::connect(&Son12, &Client::Quit, &a, &QCoreApplication::quit, Qt::QueuedConnection);
-
-    // do
-    // {
-    //     qInfo()<< "Enter Connect, Disconnect, Test or Quit";
-    //     QTextStream qtin(stdin);
-    //     QString line = qtin.readLine().trimmed().toUpper();
-
-    //     if(line == "CONNECT")
-    //     {
-    //         for(int i = 0; i < 3; i++ )
-    //         {
-    //             Server* Sv = Servers[i];
-    //             QObject::connect(&Son12, &Client::CallAPI, Sv, &Server::ListenAPI, Qt::UniqueConnection);
-    //             QObject::connect(Sv, &Server::Send, &Son12, &Client::Feedback, Qt::UniqueConnection);
-    //             Son12.CallAPI(Sv->name, Sv->Ids, "TestConnect: run API");
-    //             Sv->Send("Run Test connect", Sv->Ids, Sv->name);
-    //             qInfo() << "\n";
-    //         }
-    //     }
-    //     if(line == "DISCONNECT")
-    //     {
-    //         for(int i = 0; i < 3; i++)
-    //         {
-    //             Server* Sv = Servers[i];
-    //             QObject::disconnect(&Son12, &Client::CallAPI, Sv, &Server::ListenAPI);
-    //             QObject::disconnect(Sv, &Server::Send, &Son12, &Client::Feedback);
-    //             Son12.CallAPI(Sv->name, Sv->Ids, "Test disconnect: run API");
-    //             Sv->Send("Run Test connect", Sv->Ids, Sv->name);
-    //         }
-    //     }
-    //     if(line == "TEST")
-    //     {
-    //         for(int i = 0; i < 3; i++)
-    //         {
-    //             Server* Sv = Servers[i];
-    //             Sv->TestPing("Test ping server");
-    //         }
-    //         qInfo()<< "Test complete";
-    //     }
-    //     if(line == "QUIT")
-    //     {
-    //         Son12.Quit();
-    //         break;
-    //     }
-    // }
-    // while(true);
-
-
+    MyObject *rObj = makeObject();
+    printTree(rObj);
+    delete rObj;
     return a.exec();
 }
