@@ -97,4 +97,73 @@
 ```cpp
     QSharedPointer<ClassName> obj(new Class());
 ```
-    
+
+# Collections
+## QList
+* Append
+    ```cpp
+        QList <int> list;
+        //Easy append
+        list << 1 << 2 << 3;
+        list.append(1);
+    ```
+* Size and count
+    * `length()` same as `size()` and `count()`
+    * If `count(value)` takes parameter, it returns the number of occurrences of ***value*** in the list
+    * `replace(a, b)`
+    * `remove(a)`: remove only one first value found
+    * `removeAll(a)`: remove all element equal value in the list
+    * `slice(index, numpl)` 
+
+
+## QVector
+* *An alias of QList*
+## QSet
+* Implimentation:
+    ```cpp
+    #include <QSet>
+
+    QSet<QString> people;
+    ```
+* Insert: 
+    ```cpp
+    people << "Son" << "Tammy" << "Bryan";
+    // or
+    people.insert("name");
+    ```
+
+## QMap
+* Implimentation
+    ```cpp
+    #include <QMap>
+
+    QMap<String, int> ages;
+    ```
+* Insert
+    ```cpp
+    ages.insert(Key, value);
+    ```
+* Query
+    ```cpp
+    qInfo() << "Keys" << ages.keys();
+    qInfo() << "Keys" << ages.values();
+    qInfo() << ages["name"];
+    ```
+## QStringList
+* Implimentation
+    ```cpp
+    #include <QStringList>
+
+    QStringList names;
+    ```
+* Insert
+    ```cpp
+    names << "Son" << "dep" << "trai";
+    // or
+    names.append("lop 12");
+    ```
+## qDeleteAll with QList
+* Delete all the items in the range using the Cpp `delete` operator
+* The item type must be  pointer type
+* `qDeleteAll` doesn't remove the items. Have to use `clear()` to remove the items
+
